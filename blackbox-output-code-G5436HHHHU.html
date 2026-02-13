@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffe6f2;
+            color: #d63384;
+            text-align: center;
+            padding: 50px;
+            position: relative;
+            min-height: 100vh;
+        }
+        h1 {
+            font-size: 2.5em;
+        }
+        p {
+            font-size: 1.2em;
+            margin: 20px 0;
+        }
+        .heart {
+            font-size: 3em;
+            color: #ff1493;
+        }
+        button {
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 10px;
+        }
+        button:hover {
+            background-color: #ff1493;
+        }
+        #no-button {
+            position: absolute;
+            transition: all 0.3s ease;
+        }
+        #response {
+            display: none;
+            margin-top: 30px;
+            color: #228b22;
+        }
+    </style>
+</head>
+<body>
+    <div class="heart">❤️</div>
+    <h1>Will you be my Valentine?</h1>
+    <p>Hey [Their Name],</p>
+    <p>I hope this message finds you smiling. With Valentine's Day around the corner, I've been thinking about how much you mean to me. Your [something specific about them, like "laugh" or "kindness"] always brightens my day.</p>
+    <p>So, will you be my Valentine? Let's make this day (and hopefully many more) special together. What do you say?</p>
+    <p>With love,<br>[Your Name]</p>
+    <p>P.S. If yes, how about [a fun idea, like "dinner and a movie" or "a walk in the park"]?</p>
+    
+    <button onclick="showResponse()">Yes!</button>
+    <button id="no-button" onmouseover="moveNoButton()" onclick="moveNoButton()">No</button>
+    
+    <div id="response">
+        <h2>Yay! I knew you'd say yes! 💕</h2>
+        <p>Let's plan something amazing. Can't wait! [Add a personal note or next steps here.]</p>
+    </div>
+
+    <script>
+        function showResponse() {
+            document.getElementById('response').style.display = 'block';
+        }
+
+        function moveNoButton() {
+            const button = document.getElementById('no-button');
+            const maxX = window.innerWidth - button.offsetWidth - 20;
+            const maxY = window.innerHeight - button.offsetHeight - 20;
+            const randomX = Math.floor(Math.random() * maxX);
+            const randomY = Math.floor(Math.random() * maxY);
+            button.style.left = randomX + 'px';
+            button.style.top = randomY + 'px';
+        }
+    </script>
+</body>
+</html>
